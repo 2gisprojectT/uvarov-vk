@@ -14,7 +14,11 @@ class SearchBar(BaseComponent):
         'search_tab': '.searchBar__tab.searchBar__refbookTab'
     }
 
+    def setEmpty(self):
+         self.driver.find_element_by_css_selector(self.selectors['input']).clear()
+
     def search(self, query):
+        self.setEmpty()
         self.driver.find_element_by_css_selector(self.selectors['search_tab']).click()
         self.driver.find_element_by_css_selector(self.selectors['input']).send_keys(query)
         self.driver.find_element_by_css_selector(self.selectors['submit']).submit()
@@ -27,4 +31,3 @@ class SearchBar(BaseComponent):
         self.driver.find_element_by_css_selector(self.selectors['from']).send_keys(departute)
         self.driver.find_element_by_css_selector(self.selectors['to']).send_keys(destination)
         self.driver.find_element_by_css_selector(self.selectors['submit_path']).submit()
-

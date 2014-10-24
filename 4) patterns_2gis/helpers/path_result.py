@@ -16,3 +16,6 @@ class PathResult(BaseComponent):
             return True
         else:
             return False
+
+    def foundSteps(self):
+        return self.driver.find_elements_by_css_selector(self.selectors['route_steps'])

@@ -1,0 +1,4 @@
+language: python
+python:
+- "2.7"
+script: "nosetests 1)state_machine/TestLion.py"
