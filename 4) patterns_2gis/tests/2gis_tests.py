@@ -24,7 +24,7 @@ class SeleniumTest(TestCase):
 
     #def tearDown(self):
         #self.driver.close()
-    """
+    
     def test_shareLink(self):
         oldSearchText = u'банк'
         self.page.search_bar.search(oldSearchText)
@@ -47,9 +47,9 @@ class SeleniumTest(TestCase):
 
         self.assertTrue(self.page.path_result().isFound(), 'Path was not found')
         #self.assertIsNot(self.page.path_result().foundSteps(), [], 'Path was not found')
-    """
+   
 
-    """
+    
     queries_for_searchBar = lambda: (
         (u'Банк', True),
         (u'Банк', True),
@@ -63,7 +63,7 @@ class SeleniumTest(TestCase):
     def test_searchBar(self, query, isCorrect):
         self.page.search_bar.search(query)
         self.assertEqual(self.page.search_result.count > 0, isCorrect, 'Wrong expected search result: {}'.format(self.page.search_result.count))
-    """
+    
 
 if __name__ == '__main__':
     unittest.main()
